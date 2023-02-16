@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Section from 'modules/Feedback/Section/Section';
 import FeedbackOptions from 'modules/Feedback/FeedbackOptions/FeedbackOptions';
 import Statistics from 'modules/Feedback/Statistics/Statistics';
@@ -38,23 +38,27 @@ const App = () => {
   const persentage = countPositiveFeedbackPercentage();
 
   return (
-    <Section title="Please leave feedback">
-      <FeedbackOptions
-        options={Object.keys(state)}
-        leaveFeedback={leaveFeedback}
-      />
-      {!total ? (
-        <Notification message="There is no feedback" />
-      ) : (
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          persentage={persentage}
+    <>
+      <Section title="Please leave feedback">
+        <FeedbackOptions
+          options={Object.keys(state)}
+          leaveFeedback={leaveFeedback}
         />
-      )}
-    </Section>
+      </Section>
+      <Section>
+        {!total ? (
+          <Notification message="There is no feedback" />
+        ) : (
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            persentage={persentage}
+          />
+        )}
+      </Section>
+    </>
   );
 };
 

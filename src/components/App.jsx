@@ -38,14 +38,12 @@ const App = () => {
   const persentage = countPositiveFeedbackPercentage();
 
   return (
-    <>
-      <Section title="Please leave feedback">
+    <Section title="Please leave feedback">
+      <>
         <FeedbackOptions
           options={Object.keys(state)}
           leaveFeedback={leaveFeedback}
         />
-      </Section>
-      <Section>
         {!total ? (
           <Notification message="There is no feedback" />
         ) : (
@@ -57,8 +55,8 @@ const App = () => {
             persentage={persentage}
           />
         )}
-      </Section>
-    </>
+      </>
+    </Section>
   );
 };
 

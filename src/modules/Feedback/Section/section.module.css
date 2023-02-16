@@ -1,0 +1,14 @@
+.blockStatistics {
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid green;
+  padding: 10px;
+  margin-top: 25px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.title {
+  text-align: center;
+}
